@@ -1,0 +1,47 @@
+# Confirmed facts only. The agent may never state anything that is not here or in bullet_bank.yaml.
+name: Sandip Prakash Badrappan
+first_name: Sandip
+last_name: Prakash Badrappan
+phone: "(646) 419-9590"
+email: sb2774@cornell.edu          # same address as on the resume
+linkedin: https://www.linkedin.com/in/sandipprakash
+portfolio: https://sandipprakash.com/
+location: New York, NY
+timezone: America/New_York
+
+work:
+  authorized_to_work_in_us: true    # STEM OPT
+  requires_sponsorship: true        # ALWAYS answer Yes
+  years_experience_answer: "7+ years"   # form answers; never "10+"
+  education_highest: "MBA, Cornell SC Johnson College of Business (2026)"
+
+# Never claim these (spec section 3). Used by the grounding checker.
+unconfirmed:
+  - Adobe Creative Suite
+  - Photoshop
+  - Illustrator
+  - Canva
+  - Google Ads
+  - LinkedIn Ads
+  - HubSpot certification
+  - HubSpot Academy
+
+# Phrases that must never appear in outreach or short answers.
+banned_phrases:
+  - "30+ GTMs"
+  - "6.5M vehicles"
+  - "10+ years"
+  - sponsorship
+  - sponsor
+  - visa
+  - relocat
+  - OPT
+  - H-1B
+
+salary:
+  percentile: 0.70        # "upper-middle of the posted band"
+  round_to: 1000
+  # No posted band -> the application is held for review (never invent a number).
+
+eeo:
+  default: "Decline to self-identify"

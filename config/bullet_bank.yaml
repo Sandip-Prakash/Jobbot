@@ -1,0 +1,226 @@
+# Approved bullet bank. Every claim here comes verbatim from Sandip's own resumes
+# (Axon Air PDF = "pdf", Amazon Outbound PMM DOCX = "docx").
+# approved:false => never used until Sandip signs off. Only Sandip flips that flag.
+# "short" = a trimmed alternative used ONLY if the resume spills past one page.
+# "pitch" = one-clause version for outreach (numbers in it are the only numbers outreach may use).
+
+roles:
+  arya:      {count: 3, titles: ["Product Marketing & Growth (GTM Strategy & Product Marketing)", "Product Marketing & Growth"]}
+  samsung:   {count: 1, titles: ["Product Management Consultant, Cornell BigCo Studio"]}
+  millennial: {count: 2, titles: ["Product Marketing Lead & Business Head (Product Marketing Manager)", "Head of Business & Marketing Strategy"]}
+  spi:       {count: 2, titles: ["Project Manager, AI Product"]}
+  kutung:    {count: 2, titles: ["Head of Marketing and Co-Founder"]}
+  gm:        {count: 1, titles: ["Software Engineering"]}   # GM title is never changed
+  products:  {count: 2}
+
+# families: pmm | growth | product. Summary opens with the target job title.
+summaries:
+  pmm: "{title} and ex-GM engineer with 8+ years across engineering, product & marketing; owns pricing, packaging, launches & sales enablement that drive pipeline. Cornell MBA with Distinction (Top 10%)."
+  growth: "{title} and ex-GM engineer with 8+ years across engineering, product & marketing; runs segmented email, push & WhatsApp campaigns, event-led acquisition & GenAI content workflows, measured on conversion & revenue. Cornell MBA (Top 10%)."
+  product: "{title} and ex-GM engineer with 8+ years across engineering, product & marketing; leads 0→1 discovery, ICPs, MVP scope & success metrics from customer research. Cornell MBA with Distinction (Top 10%)."
+summaries_short:
+  pmm: "{title}, ex-GM engineer, 8+ years across engineering, product & marketing; owns pricing, packaging, launches & enablement. Cornell MBA (Top 10%)."
+  growth: "{title}, ex-GM engineer, 8+ years across engineering, product & marketing; runs email, push & WhatsApp campaigns and event-led acquisition. Cornell MBA (Top 10%)."
+  product: "{title}, ex-GM engineer, 8+ years across engineering, product & marketing; leads 0→1 discovery, ICPs & MVP scope. Cornell MBA (Top 10%)."
+
+# Last line of the resume. "label" is bold, "text" follows. Must fit on ONE line.
+skills:
+  pmm:     {label: Skills, text: ": Pricing & packaging, GTM planning, launches, sales enablement & playbooks, partner/channel GTM, HubSpot, SQL"}
+  growth:  {label: Tools,  text: ": Advanced Excel (pivot tables, macros, charts), SQL, Python, HubSpot, n8n/Apify workflows & scrapers, Claude/OpenAI"}
+  product: {label: Skills, text: ": Product discovery, PRDs & MVP scoping, customer research, SQL, Python, HubSpot, Claude/OpenAI"}
+
+bullets:
+  # ---------------- ARYA ----------------
+  - id: arya-sales-kit
+    role: arya
+    source: pdf
+    approved: true
+    tags: [pmm, positioning, messaging, enablement, battlecards, case studies, sales kit, first product marketer]
+    text: "As Arya's first product marketer, built its positioning & messaging framework and full sales kit: one-pagers for 8 AI workflows, battlecards, first case studies, decks & ROI calculator."
+    short: "As Arya's first product marketer, built its positioning & messaging and full sales kit: 8 AI workflow one-pagers, battlecards, case studies, decks & ROI calculator."
+    pitch: "As Arya's first product marketer I built the positioning, messaging and sales kit, including one-pagers for 8 AI workflows"
+  - id: arya-roi
+    role: arya
+    source: pdf
+    approved: true
+    tags: [pmm, roi, value, customers, pricing, business case, healthcare, ai]
+    text: "Mapped workflows across 120+ customers into ROI models worth $5M+ in annual customer value, translating AI capabilities into operational & financial value for buyers."
+    short: "Mapped workflows across 120+ customers into ROI models worth $5M+ in annual customer value for buyers."
+    pitch: "I mapped workflows across 120+ customers into ROI models worth $5M+ in annual customer value"
+  - id: arya-agents-pdf
+    role: arya
+    source: pdf
+    approved: true
+    tags: [pmm, ai, agents, hubspot, pipeline, analytics, enablement, automation]
+    text: "Analyzed HubSpot pipeline data to refine messaging & enablement; built AI agents (Claude, GitHub, Vercel, HubSpot) with Engineering & Sales, cutting GTM production 80% & account research 83%."
+    short: "Analyzed HubSpot pipeline data to refine messaging; built AI agents with Engineering & Sales, cutting GTM production 80% & account research 83%."
+    pitch: "I built AI agents with Engineering and Sales that cut GTM production time 80% and account research time 83%"
+  - id: arya-agents-docx
+    role: arya
+    source: docx
+    approved: true
+    tags: [ai, agents, automation, hubspot, growth, ops]
+    text: "Scoped and shipped internal AI agents (Claude, GitHub, Vercel, HubSpot) with Engineering and Sales, cutting GTM production time 80% and account research time 83%."
+    short: "Shipped internal AI agents (Claude, GitHub, Vercel, HubSpot) with Engineering and Sales, cutting GTM production time 80% and account research 83%."
+    pitch: "I shipped internal AI agents that cut GTM production time 80% and account research time 83%"
+  - id: arya-email
+    role: arya
+    source: docx
+    approved: true
+    tags: [growth, lifecycle, email, campaigns, content, genai, demand gen]
+    text: "Designed sales & event email campaigns with the founder (~27% open rate); built an AI content workflow that cut campaign turnaround from 5 days to under half a day."
+    short: "Designed sales & event email campaigns with the founder (~27% open rate); built an AI content workflow cutting turnaround from 5 days to under half a day."
+    pitch: "I built an AI content workflow that cut campaign turnaround from 5 days to under half a day"
+  - id: arya-events
+    role: arya
+    source: docx
+    approved: true
+    tags: [growth, events, demand gen, acquisition, segmentation, outreach]
+    text: "Planned events as a client-acquisition channel: researched & segmented target audiences, set channel goals, and designed event collateral & pre/post-event outreach."
+    short: "Planned events as a client-acquisition channel: segmented audiences, set channel goals, and designed collateral & pre/post-event outreach."
+    pitch: "I planned events as a client-acquisition channel, from audience segmentation to pre/post-event outreach"
+
+  # ---------------- SAMSUNG ----------------
+  - id: samsung-pdf
+    role: samsung
+    source: pdf
+    approved: true
+    tags: [product, discovery, mvp, requirements, 0to1, business case, pmm]
+    text: "Led discovery for a 0→1 social co-viewing product, distilling 50+ opportunities into 4 priorities; defined MVP, requirements & success metrics and presented the business case to Samsung, which selected it for implementation."
+    short: "Led discovery for a 0→1 social co-viewing product, distilling 50+ opportunities into 4 priorities; defined MVP & success metrics; Samsung selected it for implementation."
+    pitch: "I led discovery for a 0→1 product at Samsung TV Plus, distilling 50+ opportunities into 4 priorities, and Samsung selected it for implementation"
+  - id: samsung-docx
+    role: samsung
+    source: docx
+    approved: true
+    tags: [growth, engagement, retention, product, discovery]
+    text: "Led discovery for a 0→1 social co-viewing product, distilling 50+ opportunities into 4 priorities; defined MVP & engagement/retention metrics and presented the business case to Samsung, which selected it for implementation."
+    short: "Led discovery for a 0→1 social co-viewing product, distilling 50+ opportunities into 4 priorities; defined MVP & engagement/retention metrics; Samsung selected it."
+    pitch: "I led discovery for a 0→1 product at Samsung TV Plus, distilling 50+ opportunities into 4 priorities"
+
+  # ---------------- MILLENNIAL ----------------
+  - id: mil-pricing
+    role: millennial
+    source: pdf
+    approved: true
+    tags: [pmm, pricing, packaging, experiments, shopify, roas, willingness to pay, analytics]
+    text: "Ran pricing experiments & analyzed years of Shopify sales data by price, timing, category & region to find a coaching client's willingness-to-pay sweet spot; scaled ad spend 10x, lifting ROAS ~2.5x to 5x."
+    short: "Ran pricing experiments & analyzed years of Shopify sales data to find a coaching client's willingness-to-pay sweet spot; scaled ad spend 10x, lifting ROAS ~2.5x to 5x."
+    pitch: "I ran pricing experiments on years of Shopify sales data and lifted a client's ROAS from ~2.5x to 5x"
+  - id: mil-gtm
+    role: millennial
+    source: pdf
+    approved: true
+    tags: [pmm, gtm, launches, positioning, messaging, competitive, value proposition, roas, channels]
+    text: "Led GTM for 10+ clients: competitive landscaping, value-proposition & price-point research, positioning & messaging, then launches across paid, owned & partner channels, lifting ROAS ~2x to 7x."
+    short: "Led GTM for 10+ clients: competitive landscaping, value-prop & price-point research, positioning & messaging, then launches, lifting ROAS ~2x to 7x."
+    pitch: "I led GTM launches for multiple clients, lifting ROAS from ~2x to 7x"
+  - id: mil-team
+    role: millennial
+    source: docx
+    approved: false
+    note: "NEEDS SANDIP: says 20+ brands / 28-person team; PDF says 10+ clients. Conflicting counts."
+    tags: [leadership, p&l, retention]
+    text: "Led a 28-person team with P&L ownership; ran monthly performance reviews with client founders & leadership across 20+ brands, delivering a ~200% loss-to-profit turnaround with 85% retention."
+    short: "Led a 28-person team with P&L ownership across 20+ brands, delivering a ~200% loss-to-profit turnaround with 85% retention."
+    pitch: ""
+  - id: mil-paid
+    role: millennial
+    source: docx
+    approved: false
+    note: "NEEDS SANDIP: claims paid social & SEARCH campaigns; hands-on Google/LinkedIn Ads is NOT a confirmed skill."
+    tags: [growth, paid social, email, push, roas]
+    text: "Ran paid social & search campaigns for 20+ brands, plus email & push for select clients, using performance data to optimize creative, audiences & spend, lifting paid-media ROAS from ~2x to 7x."
+    short: "Ran paid social & search campaigns for 20+ brands, plus email & push, lifting paid-media ROAS from ~2x to 7x."
+    pitch: ""
+
+  # ---------------- SPI EDGE ----------------
+  - id: spi-interviews
+    role: spi
+    source: both
+    approved: true
+    tags: [pmm, product, research, customer interviews, icp, positioning, insights]
+    text: "Led analysis of 2,500+ customer interviews across 10 cities, 6+ industries & 5 languages, translating behavioral insight into ICPs, product recommendations, positioning & priority decisions for founders."
+    short: "Led analysis of 2,500+ customer interviews across 10 cities & 5 languages, translating insight into ICPs, product recommendations & positioning for founders."
+    pitch: "I led analysis of 2,500+ customer interviews and turned the insight into ICPs, positioning and priorities for founders"
+  - id: spi-tool
+    role: spi
+    source: pdf
+    approved: true
+    tags: [ai, product, automation, research, openai, tooling]
+    text: "Scoped & built an OpenAI-powered interview-analysis tool with an intern, adopted by the research team across 5 of 6 venture studies; scaled output from ~200 to 1,000+ interviews per study, cutting analysis time 92%."
+    short: "Built an OpenAI-powered interview-analysis tool with an intern, adopted across 5 of 6 venture studies; scaled output from ~200 to 1,000+ interviews per study, cutting analysis time 92%."
+    pitch: "I built an OpenAI-powered interview-analysis tool that cut analysis time 92%"
+  - id: spi-putchi
+    role: spi
+    source: docx
+    approved: true
+    tags: [growth, lifecycle, push, whatsapp, email, owned channels, retention]
+    text: "Ran segmented push, WhatsApp & email campaigns for Putchi, a maternal-care app brand, driving 10%+ of total purchases through owned channels."
+    short: "Ran segmented push, WhatsApp & email campaigns for Putchi, a maternal-care app, driving 10%+ of total purchases via owned channels."
+    pitch: "I ran segmented push, WhatsApp and email campaigns that drove 10%+ of total purchases through owned channels"
+
+  # ---------------- KUTUNG ----------------
+  - id: kut-d2c
+    role: kutung
+    source: both
+    approved: true
+    tags: [pmm, gtm, launch, 0to1, positioning, pricing, d2c, brand, growth]
+    text: "Built and launched a D2C footwear brand 0→1 in 100 days across 5 cities, owning discovery, positioning, pricing, and GTM; drove 60% YoY revenue growth and 7.5x LinkedIn reach with zero paid budget."
+    short: "Built and launched a D2C footwear brand 0→1 in 100 days across 5 cities, owning positioning, pricing & GTM; drove 60% YoY revenue growth with zero paid budget."
+    pitch: "I launched a D2C brand 0→1 in 100 days and drove 60% YoY revenue growth with zero paid budget"
+  - id: kut-unhide
+    role: kutung
+    source: pdf
+    approved: true
+    tags: [pmm, channel, marketplace, amazon, flipkart, ecommerce, pricing, catalog]
+    text: "Launched Unhide on Amazon & Flipkart as channel lead, owning Seller Central setup, catalog, pricing & listing-policy issues."
+    short: "Launched Unhide on Amazon & Flipkart as channel lead, owning Seller Central setup, catalog & pricing."
+    pitch: "I launched a product on Amazon and Flipkart as channel lead, owning catalog and pricing"
+  - id: kut-ergod
+    role: kutung
+    source: docx
+    approved: true
+    tags: [growth, events, newsletter, email, community, content]
+    text: "Launched ErgoD, a 94-attendee designer networking event in Chennai, and a 32%-open-rate newsletter, managing freelance photographers & creative partners."
+    short: "Launched ErgoD, a 94-attendee designer networking event, and a 32%-open-rate newsletter, managing freelance creative partners."
+    pitch: "I launched a 94-attendee event and a newsletter with a 32% open rate"
+
+  # ---------------- GENERAL MOTORS ----------------
+  - id: gm-validation
+    role: gm
+    source: both
+    approved: true
+    tags: [technical, engineering, python, sql, tools, ux]
+    text: "Validated 12,000+ embedded diagnostic test cases at 99.99% accuracy (Python, CANoe, UDS, HIL); built UIs for Cummins North America used by 20,000+ engineers, turning technical workflows into usable tools."
+    short: "Validated 12,000+ embedded diagnostic test cases at 99.99% accuracy (Python, CANoe, UDS, HIL); built UIs used by 20,000+ engineers at Cummins North America."
+    pitch: "I started as an engineer at GM, validating 12,000+ diagnostic test cases at 99.99% accuracy"
+
+  # ---------------- PRODUCTS & AI BUILD (label bold + text) ----------------
+  - id: prod-steward
+    role: products
+    source: both
+    approved: true
+    tags: [product, 0to1, discovery, pricing, icp, prd, mvp, founder]
+    label: "STEWARD, Co-Founder"
+    text: ": Conducted 30+ landlord interviews, defined ICP, PRD, MVP scope, priorities, and pilot pricing; shipped v1 with a technical co-founder across 2 pilot properties."
+    short: ": Conducted 30+ landlord interviews, defined ICP, PRD, MVP scope & pilot pricing; shipped v1 with a technical co-founder across 2 pilot properties."
+    pitch: "I co-founded STEWARD, running 30+ landlord interviews and shipping v1 across 2 pilot properties"
+  - id: prod-unslop
+    role: products
+    source: pdf
+    approved: true
+    tags: [ai, pmm, content, llm, messaging, tooling, open source]
+    label: "Unslop:"
+    text: " built an open-source LLM review skill that scores AI-written copy against a 5-signal rubric drawn from 2,500+ interviews and rewrites what fails; adopted by Millennial Labs' team."
+    short: " built an open-source LLM review skill that scores AI-written copy against a 5-signal rubric and rewrites what fails; adopted by Millennial Labs' team."
+    pitch: "I built an open-source LLM skill that scores AI-written copy against a 5-signal rubric from 2,500+ interviews"
+  - id: prod-adintel
+    role: products
+    source: docx
+    approved: true
+    tags: [growth, ai, ads, creative, competitive, automation, genai]
+    label: "AI Ad Intelligence:"
+    text: " scraped & transcribed competitor Meta ads, analyzed creative patterns, generated scripts, ran compliance checks & produced ads via Higgsfield, cutting campaign development from days to hours."
+    short: " scraped & transcribed competitor Meta ads, analyzed creative patterns, generated scripts & produced ads via Higgsfield, cutting campaign development from days to hours."
+    pitch: "I built an AI pipeline that analyzes competitor ads and produces new ones, cutting campaign development from days to hours"

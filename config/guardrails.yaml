@@ -1,0 +1,43 @@
+mode_default: dry_run             # dry_run | live   (override with JOBBOT_MODE)
+daily_auto_apply_cap: 15          # spec: 15-20. Hard ceiling enforced in code: 20
+daily_outreach_cap: 30
+score_auto_apply: 7
+score_review: 5
+max_posting_age_hours: 72         # first sight of a posting older than this is baselined, not processed
+
+# Never auto-apply (Sandip talks to hiring managers first). Logged as "reserved", nothing sent.
+blocklist:
+  Microsoft: [microsoft, github, linkedin corporation]
+  Google: [google, alphabet, deepmind, waymo, youtube]
+  Apple: [apple]
+  Amazon: [amazon, amazon web services, aws, twitch, whole foods]
+  Meta: [meta, meta platforms, facebook, instagram, whatsapp]
+  OpenAI: [openai]
+  Perplexity: [perplexity, perplexity ai]
+  Anthropic: [anthropic]
+  Nvidia: [nvidia]
+  Salesforce: [salesforce, slack, tableau, mulesoft]
+  Snowflake: [snowflake]
+  Stripe: [stripe]
+  Netflix: [netflix]
+  TikTok: [tiktok, bytedance]
+
+# Active threads: don't apply, send Sandip a flag instead.
+active_threads:
+  Chime:       {kind: application_or_referral}
+  Brex:        {kind: application_or_referral}
+  Hilton:      {kind: application_or_referral}
+  Hinge Health: {kind: application_or_referral}
+
+# TODO(Sandip): list your top 10-15 target companies. You handle these yourself; the agent logs but never applies or emails.
+excluded_targets: []
+acknowledge_empty_excluded_targets: false   # live mode refuses to start until this list is filled or this is set true
+
+# Staffing / agency employers (STEM OPT needs a W-2 E-Verify employer, no contract work)
+agency_names: [robert half, randstad, teksystems, insight global, kforce, apex systems, aerotek, experis, manpower, hays, adecco, jobot, cybercoders, collabera, kelly services, volt, revature, lensa, talentburst, motion recruitment, mondo, creative circle, the judge group]
+
+relevance:
+  title_keywords: [product marketing, pmm, go-to-market, gtm, growth marketing, lifecycle, product manager, product management, marketing manager, marketing strategy, strategy & operations, strategy and operations, business operations, bizops, sales enablement, enablement, launch, partner marketing, demand generation, content marketing, brand marketing, ai product, product operations, growth manager, head of marketing, director of marketing, marketing lead, founding marketer, product strategy]
+  title_exclude: [software engineer, backend, frontend, front-end, back-end, data scientist, machine learning engineer, devops, site reliability, security engineer, accountant, nurse, driver, attorney, counsel, intern, internship, recruiter, sdr, bdr, account executive, designer]
+  # roles must be US-based or remote-US
+  us_only: true

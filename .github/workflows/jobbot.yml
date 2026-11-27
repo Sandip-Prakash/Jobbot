@@ -1,0 +1,81 @@
+name: jobbot
+on:
+  schedule:
+    - cron: "*/20 * * * *"          # GitHub may delay scheduled runs by several minutes under load
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: dry_run (nothing submits or sends) or live
+        type: choice
+        options: [dry_run, live]
+        default: dry_run
+
+concurrency:
+  group: jobbot
+  cancel-in-progress: false         # never run two cycles at once (double-apply protection)
+
+permissions:
+  contents: write                    # only to push the jobbot-state branch
+
+jobs:
+  cycle:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      # Repo variable JOBBOT_MODE controls cron runs. Unset => dry_run. Go live = set it to "live".
+      JOBBOT_MODE: ${{ inputs.mode || vars.JOBBOT_MODE || 'dry_run' }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+      GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+      GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+      NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore state
+        run: |
+          mkdir -p state
+          if git ls-remote --exit-code --heads origin jobbot-state >/dev/null 2>&1; then
+            git fetch --depth=1 origin jobbot-state
+            git show FETCH_HEAD:state.json > state/state.json
+          fi
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - name: System deps (LibreOffice renders the PDF; Carlito = Calibri metrics)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libreoffice-writer fonts-crosextra-carlito poppler-utils
+      - run: pip install -e .
+      - run: python -m playwright install --with-deps chromium
+
+      - name: Run one cycle
+        run: python -m jobbot.cli run $( [ "$JOBBOT_MODE" = "live" ] && echo --live )
+
+      - name: Save state
+        if: always()
+        run: |
+          [ -f state/state.json ] || exit 0
+          git config user.name "jobbot"; git config user.email "jobbot@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin jobbot-state >/dev/null 2>&1; then
+            git fetch --depth=1 origin jobbot-state && git worktree add /tmp/st FETCH_HEAD && git -C /tmp/st checkout -B jobbot-state
+          else
+            git worktree add --orphan -b jobbot-state /tmp/st
+          fi
+          cp state/state.json /tmp/st/state.json
+          git -C /tmp/st add state.json
+          git -C /tmp/st commit -m "state $(date -u +%FT%TZ)" || exit 0
+          git -C /tmp/st push origin jobbot-state
+
+      - name: Upload resumes + log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jobbot-${{ github.run_id }}
+          path: |
+            out/resumes/**/Sandip_Prakash_Resume_*.pdf
+            out/shots/*.png
+            out/log.jsonl
+          retention-days: 30
+          if-no-files-found: ignore

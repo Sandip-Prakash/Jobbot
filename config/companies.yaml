@@ -1,0 +1,15 @@
+# Public job-board APIs. Add board slugs here (the part of the URL after the host).
+# Ashby:      https://jobs.ashbyhq.com/<slug>
+# Greenhouse: https://boards.greenhouse.io/<slug>  or https://job-boards.greenhouse.io/<slug>
+# Lever:      https://jobs.lever.co/<slug>
+ashby: []        # e.g. [ramp, notion]
+greenhouse: []   # e.g. [brex, airtable]
+lever: []        # e.g. [palantir]
+# Career pages that publish schema.org JobPosting JSON-LD (generic adapter). Discovery -> review queue unless the apply link is Ashby/Greenhouse/Lever.
+career_pages: []     # e.g. [https://example.com/careers]
+# Workday tenants are DISCOVERY ONLY (always review queue): {tenant, site, host}
+workday: []
+builtin_cities: [nyc, sf, boston, seattle, chicago, austin, la]
+builtin_enabled: false           # best-effort HTML adapter; enable after checking Built In's terms
+hn_whos_hiring: true
+# Adapters registered but not implemented (need login or bot-protected): wellfound, yc_waas, wttj
