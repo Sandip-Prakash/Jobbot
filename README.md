@@ -1,0 +1,2 @@
+# Jobbot
+Automate job application
